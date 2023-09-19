@@ -37,5 +37,6 @@ console.log(firstName[0]); //to grab a certain charactor using the array syntax
 console.log(firstName.charAt(1)); //to grab a certain charactor using the charAt Method
 console.log(firstName.toUpperCase()); //to concert all the charactors in the string to Uppercase
 console.log(firstName.toLowerCase()); //to concert all the charactors in the string to Lowercase
+console.log(firstName.substring(0, 3)); //Returns the substring at the specified location within a String object.
 console.log(firstName.includes('lphe')); //Returns true if searchString appears as a substring of the result of converting this object to a String, at one or more positions that are greater than or equal to position; otherwise, returns false.
 console.log(firstName.includes('Nko')); //Returns true if searchString appears as a substring of the result of converting this object to a String, at one or more positions that are greater than or equal to position; otherwise, returns false.
