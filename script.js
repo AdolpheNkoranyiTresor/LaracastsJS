@@ -28,6 +28,10 @@ const html2 = `
 `;
 
 console.log(html2);
+
+
+//The below methods allow us to manipulate our strings.
+
 console.log(firstName.length); //to count number of charactors
 console.log(firstName[0]); //to grab a certain charactor using the array syntax
 console.log(firstName.charAt(1)); //to grab a certain charactor using the charAt Method
