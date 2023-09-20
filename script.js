@@ -1,42 +1,84 @@
-const firstName = 'Adolphe';
-const lastName = "Nkoranyi";
-const jobTitle = `Web Developer`;
+//Varibles
+let num1 = 6;
+let num2 = 3;
+const num3 = 4.5;
+const num4 = -5.8;
+let myVar = "A String"
+let myVar2 = "Another String";
 
-const storeName = "Adolphe's \"Special\" Cookies \\ Treats";
+//Basic math operators
+console.log(num1 + num2); //results 9
+console.log(num1 - num2); //results 3
+console.log(num1 * num2); //results 18
+console.log(num1 / num2); //results 2
 
-const storeName2 = `Adolphe's "Special" Cookies \\ Treats`;
+//Floating points inaccuracy
+console.log(0.1 + 0.2);
+console.log(0.2 + 0.4);
 
-const fullName = firstName + ' ' + lastName;
+//Other OPerations
+console.log(12 % 6);
+console.log(8 % 3);
+console.log(2 ** 6); //Exponent, will result 64
 
-const about = 'Name: ' + firstName + ' ' + lastName + ', Job: ' + jobTitle;
+//Increment and Decrement
 
-const html = '\n'
-    + '<div>\n'
-    + 'Hi there\n'
-    + '</div>\n';
+// num1 = num1 + 1; //Increases the initial value by one
+// num1++; //Increases the initial value by one
+// num1 += 2;
+// num2 = num2 - 1; //Decreases the initial value by one
+// num2--; //Decreases the initial value by one
+// console.log(num1);
+
+//Comprisons
+console.log(num1 > num2);
+console.log(num1 >= num2);
+console.log(num1 < num2);
+console.log(num1 <= num2);
+console.log(num1 == num2);
+console.log(num1 === num2);
+console.log(num1 != num2);
+console.log(num1 !== num2);
+
+//NaN
+console.log(num1 * 'A string') //Not a Number
+
+//Infinity
+console.log(9000000000 ** 9000000000);
+console.log(Number.NEGATIVE_INFINITY);
+
+// Math Objedts
+console.log(Math.PI);
+console.log(Math.sqrt(81));
+console.log(Math.sqrt(81));
+console.log(Math.pow(2, 2));
+console.log(Math.round(9.5));
+console.log(Math.round(9.2));
+console.log(Math.ceil(9.1)); //Always round up using the ceil math integer
+console.log(Math.floor(9.8)); //Always round down using the floor math integer
 
 
-//Rewrite the above codes using backticks or template strings or template literals (``)
+//Converting
+console.log(myVar + myVar2);
+console.log(myVar + num1);
 
-const fullName2 = `${firstName} ${lastName}`; //Looks much cleaner than the first const fullName
-const about2 = `Name: ${fullName}, Job: ${jobTitle}`; //Much cleaner than the first about varible
+//String to number
+console.log(parseInt('8') + 2);
 
-const html2 = `
-<div>
-    Hi there ${fullName2}
-</div>
-`;
+//Number to a string
+console.log(2 + '');
+console.log(`${2}`);
+console.log('2');
 
-console.log(html2);
+//BigInt
+let maxInt = BigInt(Number.MAX_SAFE_INTEGER);
+console.log(maxInt);
+maxInt++;
+console.log(maxInt);
+maxInt++;
+console.log(maxInt);
 
 
-//The below methods allow us to manipulate our strings.
-
-console.log(firstName.length); //to count number of charactors
-console.log(firstName[0]); //to grab a certain charactor using the array syntax
-console.log(firstName.charAt(1)); //to grab a certain charactor using the charAt Method
-console.log(firstName.toUpperCase()); //to concert all the charactors in the string to Uppercase
-console.log(firstName.toLowerCase()); //to concert all the charactors in the string to Lowercase
-console.log(firstName.substring(0, 3)); //Returns the substring at the specified location within a String object.
-console.log(firstName.includes('lphe')); //Returns true if searchString appears as a substring of the result of converting this object to a String, at one or more positions that are greater than or equal to position; otherwise, returns false.
-console.log(firstName.includes('Nko')); //Returns true if searchString appears as a substring of the result of converting this object to a String, at one or more positions that are greater than or equal to position; otherwise, returns false.
+let bigNumber = 9007199254740993n;
+bigNumber = bigNumber * 9n;
+console.log(bigNumber);
