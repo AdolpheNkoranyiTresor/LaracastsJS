@@ -1,44 +1,33 @@
-let age = 31;
+const people = ["Jerry", "Six", "Bonface", "Adolphe"];
+const numbers = [2, 4, 6, 7, 3, 5, 23];
+const mixed = ['A string', 55, true, { a: 4 }, null, undefined, [2, 45, 5, 8]];
 
-const isOld = age >= 30;
-const isCool = true;
+// console.log(people);
+// console.log(people[3]);
+// console.log(people.length);
+// people.push('Ann'); //Use "push" to add an item in the end of the array
+// console.log(people);
+// // people.pop("Ann"); //Use "pop" to remove an item in the end of the array
+// //Or
+// const ann = people.pop();
 
-// console.log(isOld);
-// console.log(isCool);
+// console.log(people);
+// console.log(ann);
 
-//Comparisons
 
-// console.log(4 > 2);
-// console.log(4 >+ 2);
-// console.log(4 < 2);
-// console.log(4 <= 2);
+numbers[2] = 66; //Replace a certain item in the array using the index
+console.log(numbers)
 
-// //Equality: Strict Equality '===' vs Loose Equality '=='
-// console.log(4 === 4); //Compares the type and the value, is true if both the type & value are the same.
-// console.log(4 === '4'); //Compares the type and the value, is true if both the type & value are the same.
-// console.log(4 == 4); //Compares only the value
-// console.log(4 == '4'); //Compares only the value
-// console.log(4 !== '4'); //Compares the type and the value, is true if both the type & value are the same.
-// console.log(4 != '4'); //Compares only the value
+people.unshift('Nico'); //Use "unshift" to add an item in the front of the array
+console.log(people);
 
-// //Logical Operators
-//AND Logical Operatore, results to "True" if both ends are true
-// console.log(true && true);
-// console.log(false && true);
-// console.log(true && false);
-// console.log(false && false);
+people.shift("Nico"); //Use "shift" to add an item in the front of the array
+console.log(people);
 
-//OR Logical Operatore, results to "True" if one of the values is true
-// console.log(true || true);
-// console.log(false || true);
-// console.log(true || false);
-// console.log(false || false);
 
-// console.log(isOld && isCool)
+console.log(people.includes('Ninja')); //Check if something exist in the array
+console.log(people.indexOf('Adolphe')); //Find the item in the array
+console.log(people.reverse('')); //Reverse the array
 
-//Convert boolean to string
-// console.log(isOld.toString());
-
-/*Truthy vs Falsy, all values are truthy except: 
-false, 0, -0, 0n, "", null, undefined, and NaN. */
-console.log(Boolean(undefined));
+const joinedArray = people.concat(mixed);
+console.log(joinedArray);
