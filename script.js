@@ -1,33 +1,42 @@
-const people = ["Jerry", "Six", "Bonface", "Adolphe"];
-const numbers = [2, 4, 6, 7, 3, 5, 23];
-const mixed = ['A string', 55, true, { a: 4 }, null, undefined, [2, 45, 5, 8]];
+const person = {
+    firstName: 'Adolphe',
+    'last-name': 'Tresor',
+    age: 30,
+    isCool: false,
+    hobbies: ['Worship songs', 'singing'],
+    address: {
+        avenue: 'Route 0012 est',
+        city: 'Nairobi',
+        country: 'Kenya',
+    },
+    howOldAmI: function () {
+        console.log(`I am ${this.age} years old.`)
+    }
+};
 
-// console.log(people);
-// console.log(people[3]);
-// console.log(people.length);
-// people.push('Ann'); //Use "push" to add an item in the end of the array
-// console.log(people);
-// // people.pop("Ann"); //Use "pop" to remove an item in the end of the array
-// //Or
-// const ann = people.pop();
+// console.log(person.firstName);
+// console.log(person['last-name']);
 
-// console.log(people);
-// console.log(ann);
+// person.hairColor = 'Black';
 
+// delete person.isCool;
 
-numbers[2] = 66; //Replace a certain item in the array using the index
-console.log(numbers)
+// console.log(person);
+person.howOldAmI();
 
-people.unshift('Nico'); //Use "unshift" to add an item in the front of the array
-console.log(people);
+const groupOfPeople = [
+    {
+        name: 'Adolphe',
+        age: 34,
+    },
+    {
+        name: 'Nickel',
+        age: 20,
+    },
+    {
+        name: 'Jack',
+        age: 45,
+    },
+];
 
-people.shift("Nico"); //Use "shift" to add an item in the front of the array
-console.log(people);
-
-
-console.log(people.includes('Ninja')); //Check if something exist in the array
-console.log(people.indexOf('Adolphe')); //Find the item in the array
-console.log(people.reverse('')); //Reverse the array
-
-const joinedArray = people.concat(mixed);
-console.log(joinedArray);
+console.log(groupOfPeople);
