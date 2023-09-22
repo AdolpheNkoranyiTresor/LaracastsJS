@@ -1,42 +1,28 @@
-const person = {
-    firstName: 'Adolphe',
-    'last-name': 'Tresor',
-    age: 30,
-    isCool: false,
-    hobbies: ['Worship songs', 'singing'],
-    address: {
-        avenue: 'Route 0012 est',
-        city: 'Nairobi',
-        country: 'Kenya',
-    },
-    howOldAmI: function () {
-        console.log(`I am ${this.age} years old.`)
-    }
-};
+//function declaration / function definition
 
-// console.log(person.firstName);
-// console.log(person['last-name']);
+function sayHello(firstName = 'Nick', lastName = 'Park') {
+    //function body
+    console.log("Hello");
+    console.log(firstName);
+    console.log(lastName);
+}
 
-// person.hairColor = 'Black';
+//function execution / run /invoke / call
+sayHello('Adolphe', 'Nkoranyi');
+sayHello('Tresor', 'Mukange');
+sayHello();
 
-// delete person.isCool;
+function add(num1, num2) {
+    return num1 + num2;
+}
 
-// console.log(person);
-person.howOldAmI();
+const result = add(5, 4);
+console.log(result);
 
-const groupOfPeople = [
-    {
-        name: 'Adolphe',
-        age: 34,
-    },
-    {
-        name: 'Nickel',
-        age: 20,
-    },
-    {
-        name: 'Jack',
-        age: 45,
-    },
-];
+function sayHelloAgain(firstName = 'Nick', lastName = 'Park') {
+    
+    return `Hey ${firstName} ${lastName}`;
 
-console.log(groupOfPeople);
+}
+
+console.log(sayHelloAgain());
