@@ -1,28 +1,35 @@
-//function declaration / function definition
+//Function Expression
+const hello = function (firstName) {
+  return `hello ${firstName}`;
+};
 
-function sayHello(firstName = 'Nick', lastName = 'Park') {
-    //function body
-    console.log("Hello");
-    console.log(firstName);
-    console.log(lastName);
+//Arrow functions
+// const hello = (firstName) =>{
+//     return `hello ${firstName}`;
+// }
+
+// const hello = firstName => `hello ${firstName}`; //This is an implicit return
+
+console.log(hello('Adolphe'));
+
+
+const person = {
+    firstName: 'Adolphe',
+    lastName: 'Tresor',
+    age: 29,
+    howOldAmI: function () {
+        console.log(`I am ${this.age} years old`);
+    }
+};
+
+person.howOldAmI();
+
+
+// Callback function
+const button = document.querySelector('button');
+
+const greetings = function () {
+    console.log("Hello there!!!");
 }
 
-//function execution / run /invoke / call
-sayHello('Adolphe', 'Nkoranyi');
-sayHello('Tresor', 'Mukange');
-sayHello();
-
-function add(num1, num2) {
-    return num1 + num2;
-}
-
-const result = add(5, 4);
-console.log(result);
-
-function sayHelloAgain(firstName = 'Nick', lastName = 'Park') {
-    
-    return `Hey ${firstName} ${lastName}`;
-
-}
-
-console.log(sayHelloAgain());
+button.addEventListener('click', greetings);
