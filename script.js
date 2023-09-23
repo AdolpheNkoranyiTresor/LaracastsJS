@@ -1,69 +1,49 @@
-// for (let i = 0; i < 10; i++) {
-//   console.log(`i is ${i}`); //Prints out 0 to 9
+//Global scope (global variables can be accessible anywhere)
+// let message = 'hello!';
+// var greeting = "hey!";
+
+// console.log(message);
+// console.log(greeting);
+
+// if (true) {
+//   console.log(message);
+//   console.log(greeting);
 // }
 
-// const people = ["Adolphe", "Six", "Bobby"];
+//Function scope (function variables can only be accessible within th function)
 
-// for (let i = 0; i < people.length; i++) {
-//   console.log(people[i]); //Prints out Adolphe, Six and Bobby
-// }
+// function sayHello() {
+//   let message = "hello!";
+//   var greeting = "hey!";
 
-//Break and Continue
-// for (let i = 0; i < 10; i++) {
-//   if (i === 4) {
-//     // break; // prints out 0 to 3
-//     continue; //prints out 0 to 9 but skips i === 4
+//   console.log(message);
+//   console.log(greeting);
+
+//   function nested() {
+//     console.log(message);
+//     console.log(greeting);
 //   }
-//   console.log(`i is ${i}`);
+
+//   nested();
 // }
 
-//While loops
+// sayHello();
 
-// let j = 0;
-// while (j < 10) {
-//   console.log(`j is ${j}`);
-//   j += 2;
+//Block scope
+
+// if (true) {
+//   let message = "hello!";
+//   var greeting = "hey!";
+
+//   console.log(message);
+//   console.log(greeting);
 // }
 
-//DO while loop
+//   console.log(greeting);
 
-// let k = 0;
-// do {
-//   console.log(`k is ${k}`);
-//   k++;
-// } while (k < 10);
+(function () {
+  const alert = 'error';
+  console.log(alert);
+})();
 
-//For in loop
-
-const person = {
-  firsName: 'Adolphe',
-  lastName: 'Nkoranyi',
-  job: 'Web Master',
-};
-
-for (const x in person) {
-  // console.log(x); //prints firstName, lastName and job
-  console.log(person[x]); //results the actual values: Adolphe, Nkoranyi and Web Master
-}
-
-// for of loops
-
-const people = ["Adolphe", "Six", "Bobby"];
-
-// for (const y of people) {
-//   console.log(y);
-// }
-
-//foreach
-
-// people.forEach((person) => {
-//     console.log(person);
-// });
-
-//map
-
-const peoppleMap = people.map((person, index) => {
-  return `${index}:${person}`;
-});
-
-console.log(peoppleMap);
+alert('hi');
