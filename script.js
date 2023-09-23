@@ -1,81 +1,51 @@
-const age = 12;
-const drinkingAge = 18;
+const trafficLight = "yellow";
 
-if (age >= drinkingAge) {
-  console.log("I can drink beer!!");
-} else {
-  console.log("I cannot drink beer at my age!!");
+switch (trafficLight) {
+  case "Yellow":
+    console.log("Slow Down");
+    break;
+  case "Green":
+    console.log("GO");
+    break;
+  case "Red":
+    console.log("STOP");
+    break;
+  default:
+    console.log("Traffic Light not working");
 }
 
-const passwordTypedIn = "putyoursavedpassword123";
-const actualPassword = "password123";
+const grade = 60;
 
-if (passwordTypedIn === actualPassword) {
-    console.log('Correct password, login in progress...');
-} else {
-    console.log("Incorrect password, please try again later");
+switch (true) {
+  case grade >= 80:
+    console.log("Latter Grade: A");
+    break;
+  case grade >= 70:
+    console.log("Latter Grade: B");
+    break;
+  case grade >= 60:
+    console.log("Latter Grade: C");
+    break;
+  case grade >= 50:
+    console.log("Latter Grade: D");
+    break;
+  default:
+    console.log("Latter Grade: F");
 }
 
+const animal = "Dog";
 
-const month = 'October';
-const day = 31;
-
-if (month === 'October' && day === 31) {
-  console.log(`It's Halloween!`);
-} else {
-  console.log("It's not Halloween");
+switch (animal) {
+  case "Cow":
+  case "Giraffe":
+  case "Dog":
+  case "Pig":
+    console.log("This animal is NOT extinct");
+    break;
+  case "Dinosaur":
+  case "Dodo":
+    console.log("This animal is extinct");
+    break;
+  default:
+    console.log("I am not an animal of this kind.");
 }
-
-//If, else if statment
-
-// > 80 = A
-// 70 - 80 = B
-// 60 - 70 = C
-// 50 - 60 = D
-// < 50 = F
-
-
-const grade = 82;
-
-if (grade >= 80) {
-  console.log("Latter grade: A");
-} else if (grade >= 70) {
-  console.log("Latter grade: B");
-} else if (grade >= 60) {
-  console.log("Latter grade: C");
-} else if (grade >= 50) {
-  console.log("Latter grade: D");
-} else {
-  console.log("Latter grade: F");
-}
-
-
-// Ternary
-
-// if (age >= drinkingAge) {
-//   console.log("I can drink beer!!");
-// } else {
-//   console.log("I cannot drink beer at my age!!");
-// }
-// This is a Ternary, a short form of if else statment
-age >= drinkingAge
-  ? console.log("I can drink beer!!")
-  : console.log("I cannot drink beer at my age!!");
-
-// let canIDrinkBeer;
-
-// if (age >= drinkingAge) {
-//     canIDrinkBeer = "I can drink beer!!";
-// } else {
-//     canIDrinkBeer = "I cannot drink beer at my age!!";
-// }
-
-// let = canIDrinkBeer = age >= drinkingAge ? 'I can drink Beer' : 'I cannot take beer yet.';
-
-// console.log(canIDrinkBeer);
-
-console.log(
-    age >= drinkingAge
-    ? "I can drink Beer"
-    : "I cannot take beer yet."
-);
