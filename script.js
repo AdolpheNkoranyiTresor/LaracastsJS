@@ -1,49 +1,50 @@
-//Global scope (global variables can be accessible anywhere)
-// let message = 'hello!';
-// var greeting = "hey!";
+/*
+Types in JS
 
-// console.log(message);
-// console.log(greeting);
+Primitive Types - Pass by value
 
-// if (true) {
-//   console.log(message);
-//   console.log(greeting);
-// }
+-Strings
+-Numbers
+-BigInt
+-Boolean
+-Null and Undefined
+-Symbol
+*/
 
-//Function scope (function variables can only be accessible within th function)
+let a = "hi";
+let b = a;
+b = b + " there";
 
-// function sayHello() {
-//   let message = "hello!";
-//   var greeting = "hey!";
+//Mental Model
+//a: 'hi'
+//b: 'hi there'
 
-//   console.log(message);
-//   console.log(greeting);
+console.log(a);
+console.log(b);
 
-//   function nested() {
-//     console.log(message);
-//     console.log(greeting);
-//   }
 
-//   nested();
-// }
+//Reference Types - Pass by reference
 
-// sayHello();
+/*
+-Arrays
+-Objects
+-Functions
 
-//Block scope
+*/
 
-// if (true) {
-//   let message = "hello!";
-//   var greeting = "hey!";
+let c = [1, 2];
+let = d = c;
+let e = [1, 2];
+// d.push(3);
 
-//   console.log(message);
-//   console.log(greeting);
-// }
+//Mental Model
+//c: 0x01
+//d: 0x01
 
-//   console.log(greeting);
+//Memory
+//0x01: [1, 2]
+//0x02: [1, 2]
 
-(function () {
-  const alert = 'error';
-  console.log(alert);
-})();
-
-alert('hi');
+console.log(c);
+console.log(d);
+console.log(c === e);
