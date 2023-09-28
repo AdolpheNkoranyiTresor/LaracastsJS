@@ -4,17 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript The First Steps</title>
-    <!-- <script src="script.js" defer></script> -->
+    <title>Working with the DOM</title>
 
+    <style>
+        ul{
+            background: #6daa7d;
+        }
+    </style>
 </head>
 
 <body>
-    <p>This is some content.</p>
+    <input type="text" id="todoInput">
 
-    <button>Click here</button>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <ul class="todo-list">
+        <li>Go Shopping</li>
+        <li>Finish JavaScript Screencast</li>
+        <li>Take over world</li>
+    </ul>
 
-    <script src="script.js"></script>
+    <div class="sidebar">
+        <ul class="todo-list">
+            <li>Go Shopping Again</li>
+            <li>Finish JavaScript Screencast Again</li>
+            <li>Take over world Again</li>
+        </ul>
+    </div>
+
+    <ul class="todo-list">
+        <li>Adolphe</li>
+        <li>Six</li>
+        <li>Jerry</li>
+    </ul>
+
+
+    <script>
+
+        //select all the first child list elements in the .todo-list div
+        const lis = document.querySelectorAll('.todo-list li:first-child');
+        lis.forEach(li => {
+            li.style.color= 'white';
+        });
+        console.log(lis);
+
+        const sidebarList = document.querySelector('.sidebar .todo-list');
+        console.log(sidebarList);
+
+        const sidebar = document.querySelector('.sidebar');
+        console.log(sidebar);
+
+        const scoped = sidebar.querySelector('.todo-list');
+        console.log(scoped);
+
+
+    // Old methods selectElementBy...
+        const todoInput2 = document.getElementById('todoInput');
+        console.log(todoInput2);
+
+        const elements = document.getElementsByClassName('todo-list');
+        console.log(elements);
+
+    </script>
 </body>
 
 </html>
