@@ -1,50 +1,131 @@
-/*
-Types in JS
+function convertMinutesIntoSeconds(minutes) {
+    return minutes * 60;
+}
 
-Primitive Types - Pass by value
+// console.log(convertMinutesIntoSeconds(2));
+// console.log(convertMinutesIntoSeconds(3));
 
--Strings
--Numbers
--BigInt
--Boolean
--Null and Undefined
--Symbol
-*/
+function ensureQuestion(str) {
+    const lastChar = str.charAt(str.length - 1);
 
-let a = "hi";
-let b = a;
-b = b + " there";
+    // if (lastChar === '?') {
+    //     return str;
+    // }
+    //     return `${str}?`;
 
-//Mental Model
-//a: 'hi'
-//b: 'hi there'
+//Ternary of the above statement code
+    
+    return lastChar === '?' ?  str : `${str}?`;
 
-console.log(a);
-console.log(b);
+}
+
+// console.log(ensureQuestion('Yes'));
+// console.log(ensureQuestion('No'));
+// console.log(ensureQuestion('Sure?'));
+
+function maxOfNumbers(numbers) {
+  let = maxNumber = numbers[0];
+
+  // for (let i = 0; i < numbers.length; i++) {
+  //     if (numbers[i] > maxNumber) {
+  //         maxNumber = numbers[i];
+  //     };
+
+  // }
+
+//Foreach loop of the above for loop code
+
+//   numbers.forEach((number) => {
+//     if (number > maxNumber) {
+//       maxNumber = number;
+//     }
+//   });
+//   return maxNumber;
+    
+//Math.max Method    
+    // return Math.max(...numbers);
+}
+// console.log(maxOfNumbers([1,2,3])); //3
+// console.log(maxOfNumbers([1,2,3,10,100])); //100
 
 
-//Reference Types - Pass by reference
+//hello there -> HeLlO ThErE; 
+function sarcasticCase(str) {
+    let newString = '';
 
-/*
--Arrays
--Objects
--Functions
+    for (let i = 0; i < str.length; i++) {
+      // if (i % 2 === 0) {
+      //     newString = newString + str[i].toUpperCase();
+      // } else {
+      //     newString = newString + str[i].toLowerCase();
+      // }
 
-*/
+//ternary of the above if statement code
 
-let c = [1, 2];
-let = d = c;
-let e = [1, 2];
-// d.push(3);
+      newString =
+        i % 2 === 0
+          ? newString + str[i].toUpperCase()
+          : newString + str[i].toLowerCase();
+    }
+    return newString;
+}
 
-//Mental Model
-//c: 0x01
-//d: 0x01
+console.log(sarcasticCase('Hello there')); //HeLlO ThErE
+console.log(sarcasticCase('React is a JS Library')); //ReAcT Is a jS LiBrArY
 
-//Memory
-//0x01: [1, 2]
-//0x02: [1, 2]
+function noSpace(str) {
+    // let newString = '';
 
-console.log(c);
-console.log(d);
-console.log(c === e);
+    // for (let i = 0; i < str.length; i++) {
+    //     if (str[i] !== ' ') {
+    //         newString = newString + str[i];
+    //     }
+    // }
+
+    // return newString;
+
+//Split and join method of the above code
+    
+    return str.split(' ').join(''); //Split to return the string as a array with items, and join('') will join the items and get ride of the empty space
+}
+
+console.log(noSpace('A String with no space'));
+console.log(noSpace("I am okay"));
+
+
+//Square and sum each item in the array
+function squareSum(numbers) {
+    // let result = 0;
+
+    // numbers.forEach(number => {
+    //     result += (number * number);
+    // });
+    // return result;
+
+    return numbers
+        .map(number => number * number)
+        .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+}
+
+console.log(squareSum([1, 2, 3])); //14
+console.log(squareSum([4, 6, 9])); //133
+
+
+function positiveSum(numbers) {
+    // let total = 0;
+
+    // numbers.forEach(number => {
+    //     if (number > 0) {
+    //         total += number;
+    //     }
+    // });
+    // return total;
+
+    return numbers
+      .filter((number) => number > 0)
+      .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
+}
+
+console.log(positiveSum([1, 2, 3, 4, -5]));
+console.log(positiveSum([2, 4, 3, 5, -44]));
