@@ -6,70 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working with the DOM</title>
 
-    <style>
-        .heading {
-            font-size: 25px;
-        }
-
-        .heading-larger {
-            font-size: 30px;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
-    <h3 class="heading" id="my-heading" style="color: red">Some text here</h3>
-
-    <div>
-        <button id="readSomething">Read Something</button>
-        <button id="updateSomething">Update Something</button>
-    </div>
-
-    <form action="#">
-        <input type="text" id="textInput">
-        <select name="countries" id="countries">
-            <option value="DRC">Congo Democratic</option>
-            <option value="CA">Canada</option>
-            <option value="KE">Kenya</option>
-            <option value="MEXICO">Mexico</option>
-        </select>
-    </form>
-
+    
+    <ul>
+        <li>Go to store</li>
+        <li>Finish JavaScript screencast</li>
+        <li>Take over world</li>
+    </ul>
 
     <script>
-        const readButton = document.querySelector('#readSomething');
-        const updateButton = document.querySelector('#updateSomething');
-        const heading = document.querySelector('#my-heading');
-        const textInput = document.querySelector('#textInput');
-        const countries = document.querySelector('#countries');
+        // const lis = document.querySelectorAll('li');  //This consoles a Nodelist array with the li elements
+        // const lis = document.querySelector('ul').children;  //This consoles an HTMLCollection array with the li elements
+        const lis = document.querySelector('ul').childNodes;
+        // const value = document.querySelector('ul').firstElementChild;  //Selects the first element child
+        // const value = document.querySelector('ul').lastElementChild;  //Selects the last element child
+        const value = document.querySelector('ul').firstElementChild;
 
-        function readSomething() {
-            // console.log('read something');
-            console.log(heading.textContent); //returns the h3 text content in the console
-            console.log(textInput.value);
-            console.log(countries.value);
-        }
-
-
-        function updateSomething() {
-            // console.log('update something');
-            heading.textContent = 'Heading Updated';
-            // heading.style.color = '#6daa7d';
-            heading.style = 'color:#6daa7d';   //This works similar to the above code
-            // heading.classList.add('heading-larger');   //Adds a class attribute
-            // heading.classList.remove('heading-larger');   //Removes a class attribute
-            heading.classList.toggle('heading-larger');   //(Toggle) to add or remove the class attribute
-            // heading.classList.toggle('hidden');   //calls the .hidden class
-            textInput.value = 'Hardcoded from JavaScript';
-            countries.value = 'KE';
-        }
-
-        readButton.addEventListener('click', readSomething);
-        updateButton.addEventListener('click', updateSomething);
+        console.log(lis);
+        console.log(value.nextElementSibling);  // Selects the next element sibling
+        console.log(value.parentElement);  // Selects the next element sibling
     </script>
 </body>
 
