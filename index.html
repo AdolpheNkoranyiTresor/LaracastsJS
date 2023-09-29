@@ -7,67 +7,69 @@
     <title>Working with the DOM</title>
 
     <style>
-        ul{
-            background: #6daa7d;
+        .heading {
+            font-size: 25px;
+        }
+
+        .heading-larger {
+            font-size: 30px;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <input type="text" id="todoInput">
+    <h3 class="heading" id="my-heading" style="color: red">Some text here</h3>
 
-    <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-    </ul>
-    <ul class="todo-list">
-        <li>Go Shopping</li>
-        <li>Finish JavaScript Screencast</li>
-        <li>Take over world</li>
-    </ul>
-
-    <div class="sidebar">
-        <ul class="todo-list">
-            <li>Go Shopping Again</li>
-            <li>Finish JavaScript Screencast Again</li>
-            <li>Take over world Again</li>
-        </ul>
+    <div>
+        <button id="readSomething">Read Something</button>
+        <button id="updateSomething">Update Something</button>
     </div>
 
-    <ul class="todo-list">
-        <li>Adolphe</li>
-        <li>Six</li>
-        <li>Jerry</li>
-    </ul>
+    <form action="#">
+        <input type="text" id="textInput">
+        <select name="countries" id="countries">
+            <option value="DRC">Congo Democratic</option>
+            <option value="CA">Canada</option>
+            <option value="KE">Kenya</option>
+            <option value="MEXICO">Mexico</option>
+        </select>
+    </form>
 
 
     <script>
+        const readButton = document.querySelector('#readSomething');
+        const updateButton = document.querySelector('#updateSomething');
+        const heading = document.querySelector('#my-heading');
+        const textInput = document.querySelector('#textInput');
+        const countries = document.querySelector('#countries');
 
-        //select all the first child list elements in the .todo-list div
-        const lis = document.querySelectorAll('.todo-list li:first-child');
-        lis.forEach(li => {
-            li.style.color= 'white';
-        });
-        console.log(lis);
-
-        const sidebarList = document.querySelector('.sidebar .todo-list');
-        console.log(sidebarList);
-
-        const sidebar = document.querySelector('.sidebar');
-        console.log(sidebar);
-
-        const scoped = sidebar.querySelector('.todo-list');
-        console.log(scoped);
+        function readSomething() {
+            // console.log('read something');
+            console.log(heading.textContent); //returns the h3 text content in the console
+            console.log(textInput.value);
+            console.log(countries.value);
+        }
 
 
-    // Old methods selectElementBy...
-        const todoInput2 = document.getElementById('todoInput');
-        console.log(todoInput2);
+        function updateSomething() {
+            // console.log('update something');
+            heading.textContent = 'Heading Updated';
+            // heading.style.color = '#6daa7d';
+            heading.style = 'color:#6daa7d';   //This works similar to the above code
+            // heading.classList.add('heading-larger');   //Adds a class attribute
+            // heading.classList.remove('heading-larger');   //Removes a class attribute
+            heading.classList.toggle('heading-larger');   //(Toggle) to add or remove the class attribute
+            // heading.classList.toggle('hidden');   //calls the .hidden class
+            textInput.value = 'Hardcoded from JavaScript';
+            countries.value = 'KE';
+        }
 
-        const elements = document.getElementsByClassName('todo-list');
-        console.log(elements);
-
+        readButton.addEventListener('click', readSomething);
+        updateButton.addEventListener('click', updateSomething);
     </script>
 </body>
 
