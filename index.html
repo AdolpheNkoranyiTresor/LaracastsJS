@@ -10,51 +10,102 @@
 
 <body>
 
+    <h3>To DO List</h3>
+
     <ul>
-        <li>Go to store</li>
-        <li>Finish JavaScript screencast</li>
-        <li>Take over world</li>
-        <li class="todo-item flex">
-            <span class="todo-content">Actual todo item</span>
-            <button class="icon">X</button>
+        <li>
+            <span>Go to store</span>
+            <button class="edit-todo">Edit</button>
+        </li>
+        <li>
+            <span>Finish JavaScript screencast</span>
+            <button class="edit-todo">Edit</button>
+        </li>
+        <li>
+            <span>Take Over World</span>
+            <button class="edit-todo">Edit</button>
         </li>
     </ul>
 
+    <div>
+        <button class="clear-todos">Clear all todos</button>
+    </div>
+
+    <a href="https://laracasts.com" class="link">Laracasts</a>
+
+    <form action="server.php">
+        <div>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" autocomplete="off">
+        </div>
+        <div>
+            <select name="cars" id="cars">
+                <option value="Honda">Honda</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Tesla">Tesla</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="radio" id="html" name="languages" value="HTML">
+            <label for="html">HMTL</label>
+            <input type="radio" id="css" name="languages" value="CSS">
+            <label for="html">CSS</label>
+            <input type="radio" id="javascript" name="languages" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+        </div>
+
+        <div>
+            <button>Submit Form</button>
+        </div>
+    </form>
+
     <script>
-        const li = document.createElement('li');
-        li.classList.add('todoItem');
-        li.setAttribute('id', 'todoItem');
-        li.textContent = 'New Todo Item';
+        const clearButton = document.querySelector('.clear-todos');
+        const link = document.querySelector('.link');
+        const editButtons = document.querySelectorAll('.edit-todo');
+        const myInput = document.querySelector('#firstName');
+        const mySelect = document.querySelector('#cars');
+        const myRadioButtons = document.querySelectorAll('input[name="languages"]');
+        const myForm = document.querySelector('form');
 
-        const ul = document.querySelector('ul');
 
-        const li2 = document.createElement('li');
+
+        function handleClick(event) {
+            event.preventDefault();   //Prevent the default action which was to go to the laracasts.com link
+            document.querySelector('h3').textContent = 'CHANGED CONTENT';
+            clearButton.removeEventListener('click', handleClick);
+        }
+
+        function handleEdit() {
+            console.log('Edit button clicked');
+        }
+
+        clearButton.addEventListener('mousemove', handleClick);
+        link.addEventListener('click', handleClick);
+
+        myInput.addEventListener('blur', function(event) {
+            console.log('I was blurred');
+        });
+
+        mySelect.addEventListener('change', function (event) {
+            console.log(event.target.value)
+        });
+
+        myForm.addEventListener('submit', function (event){
+             event.preventDefault('Submitting the Form');
+             myForm.submit()
+
+        })
+
+        editButtons.forEach(editButton => {
+            editButton.addEventListener('click', handleEdit);
+        });
         
-        // li2.textContent = 'New Todo Item Again';
-        li2.append('New Todo Item Again');
-
-        const image = document.createElement('img');
-        image.src = 'https://picsum.photos/150';
-        image.alt = 'Images from Picsum';
-
-        // ul.appendChild(li);
-        // ul.appendChild(li2);
-        // ul.append(li, li2);   //Works as the abole two lines
-        // ul.insertAdjacentElement('afterbegin', image);   //Insert an image and adjusted it after the beginning of the ul element
-
-        const nodeToClone = document.querySelector('.todo-item');
-        const clonedTodoItem = nodeToClone.cloneNode(true);
-
-        clonedTodoItem.firstElementChild.textContent = 'Another todo Item is added here';
-
-        ul.append(clonedTodoItem);
-        ul.firstElementChild.remove(); //This removes the first child element in the ul
-
-        const anotherLi = document.createElement('li');
-        anotherLi.innerHTML = `<h2>Insert a header 2 element</h2>`;
-
-        ul.append(anotherLi);
-
+        myRadioButtons.forEach(radioButton => {
+            radioButton.addEventListener('change', function (event) {
+                console.log(radioButton.value)
+            });
+        });
     </script>
 </body>
 
