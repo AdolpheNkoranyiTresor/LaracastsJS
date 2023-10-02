@@ -9,24 +9,52 @@
 </head>
 
 <body>
-    
+
     <ul>
         <li>Go to store</li>
         <li>Finish JavaScript screencast</li>
         <li>Take over world</li>
+        <li class="todo-item flex">
+            <span class="todo-content">Actual todo item</span>
+            <button class="icon">X</button>
+        </li>
     </ul>
 
     <script>
-        // const lis = document.querySelectorAll('li');  //This consoles a Nodelist array with the li elements
-        // const lis = document.querySelector('ul').children;  //This consoles an HTMLCollection array with the li elements
-        const lis = document.querySelector('ul').childNodes;
-        // const value = document.querySelector('ul').firstElementChild;  //Selects the first element child
-        // const value = document.querySelector('ul').lastElementChild;  //Selects the last element child
-        const value = document.querySelector('ul').firstElementChild;
+        const li = document.createElement('li');
+        li.classList.add('todoItem');
+        li.setAttribute('id', 'todoItem');
+        li.textContent = 'New Todo Item';
 
-        console.log(lis);
-        console.log(value.nextElementSibling);  // Selects the next element sibling
-        console.log(value.parentElement);  // Selects the next element sibling
+        const ul = document.querySelector('ul');
+
+        const li2 = document.createElement('li');
+        
+        // li2.textContent = 'New Todo Item Again';
+        li2.append('New Todo Item Again');
+
+        const image = document.createElement('img');
+        image.src = 'https://picsum.photos/150';
+        image.alt = 'Images from Picsum';
+
+        // ul.appendChild(li);
+        // ul.appendChild(li2);
+        // ul.append(li, li2);   //Works as the abole two lines
+        // ul.insertAdjacentElement('afterbegin', image);   //Insert an image and adjusted it after the beginning of the ul element
+
+        const nodeToClone = document.querySelector('.todo-item');
+        const clonedTodoItem = nodeToClone.cloneNode(true);
+
+        clonedTodoItem.firstElementChild.textContent = 'Another todo Item is added here';
+
+        ul.append(clonedTodoItem);
+        ul.firstElementChild.remove(); //This removes the first child element in the ul
+
+        const anotherLi = document.createElement('li');
+        anotherLi.innerHTML = `<h2>Insert a header 2 element</h2>`;
+
+        ul.append(anotherLi);
+
     </script>
 </body>
 
