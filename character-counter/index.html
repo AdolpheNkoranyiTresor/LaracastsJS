@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+
+    <style>
+        .container {
+            margin: auto;
+            margin-top: 40px;
+            max-width: 600px;
+            /* text-align: center; */
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Character Counter</h2>
+        <form action="">
+            <div>
+                <textarea name="description" id="description" cols="50" rows="10"></textarea>
+                <div class="charactersContainer">
+                    Characters:
+                    <span id="characters">0</span>
+                    /
+                    <span id="maxCharacters"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const textArea = document.querySelector('textarea');
+        const charactersElements = document.querySelector('#characters');
+        const charactersContainer = document.querySelector('.charactersContainer');
+        const maxCharactersElement = document.querySelector('#maxCharacters');
+        const maxCharacters = 30; //Here we hardcoded the max characters
+        let characters = 0;
+
+        maxCharactersElement.textContent = maxCharacters;
+
+        textArea.addEventListener('input', () => {
+            if (characters >= maxCharacters) {
+                textArea.value = textArea.value.substring(0, maxCharacters);
+            }
+
+            characters = textArea.value.length;
+            charactersElements.textContent = characters;
+
+            if (characters > maxCharacters - 10) {
+                charactersContainer.style.color = 'red';
+            } else {
+                charactersContainer.style.color = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
